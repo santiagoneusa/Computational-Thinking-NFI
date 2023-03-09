@@ -71,4 +71,5 @@ After you have the python file and the '.csv' downloaded, run the program via te
 <!-- CONTACT -->
 ## Contact
 If any question, write to Santiago Neusa Ruiz (sneusar@eafit.edu.co).
+
 Project Link: https://github.com/sneusar/Computational-Thinking-NFI
