@@ -61,6 +61,7 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
         if len(unsent_activities) > 0: students[name + ' ' + lastname] = (email, unsent_activities)
         else: dataframe = dataframe.drop(index)
 
+    # output messages
     for student, data in students.items():
         print('Correo:', data[0])
         print(f'Hola {student.split()[0].capitalize()}, ¿Cómo estás?\nEstaba revisando Moodle y vi que:\n')
@@ -73,6 +74,7 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
         print(f'\nAsí que quería recordarte que la fecha de entrega es el {end_date}. Además, decirte que si tienes dudas, podemos reunirnos, de forma presencial o virtual.')
         print(f'Cordial saludo, {monitor_name}.\n\n')
         
+    
     dataframe.insert(loc = 3, column = 'Grupo', value = group_name)
     now = str(datetime.datetime.now())
     dataframe.insert(loc = 4, column = 'Fec Reporte', value = now[:10])
