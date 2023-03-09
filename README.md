@@ -43,7 +43,7 @@ To install Pandas you can use the following command.
 ### Installation
 To run the program it is only necessary to download a file by curling on the following document:
    ```sh
-   curl -O https://raw.githubusercontent.com/sneusar/Computational-Thinking-NFI/main/Automation%20of%20monitoring%20%26%20accompaniment/workshops_feedback.py
+   curl -O https://raw.githubusercontent.com/sneusar/Computational-Thinking-NFI/main/Feedback-Automation/workshops_feedback.py
    ```
    
 <!-- USAGE EXAMPLES -->
