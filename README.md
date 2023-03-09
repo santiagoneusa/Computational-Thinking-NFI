@@ -17,7 +17,7 @@ Resources for the computational thinking course in EAFIT university.
 
 <!-- ABOUT THE PROJECT -->
 
-## About the Automation of Monitoring & Accompaniment Project
+## About the Feedback Automation Project
 Since the process of keeping track of students through the Moodle platform was a bit tedious, I decided to create this script to help those who belong to the group of monitors of the 'Computational Thinking' course offered by EAFIT University.
 
 This program evaluates in a '.csv' file the grades of the students in a given group. Those who have not submitted the activity or have a grade lower than 100 in any of the activities of the workshop to be monitored, will be taken into account in a data dictionary, and then write files with this information.
