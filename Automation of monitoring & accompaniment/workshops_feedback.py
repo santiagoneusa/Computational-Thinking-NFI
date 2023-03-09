@@ -8,8 +8,6 @@ import shutil
 import datetime
 import subprocess
 import pandas as pd
-from openpyxl import Workbook
-from openpyxl.utils import get_column_letter
 
 # asking for the monitor data
 group_name = input('\nEscriba el código del grupo al que le desea realizar el seguimiento: ')
