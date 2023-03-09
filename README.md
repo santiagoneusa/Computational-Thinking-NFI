@@ -18,7 +18,7 @@ Resources for the computational thinking course in EAFIT university.
 <!-- ABOUT THE PROJECT -->
 
 ## About the Feedback Automation Project
-You can see the file [here](Feedback-Automation/workshop_feedback.py).
+You can see the file [here](https://github.com/sneusar/Computational-Thinking-NFI/blob/main/Feedback-Automation/workshops_feedback.py).
 
 Since the process of keeping track of students through the Moodle platform was a bit tedious, I decided to create this script to help those who belong to the group of monitors of the 'Computational Thinking' course offered by EAFIT University.
 
