@@ -8,8 +8,6 @@ import shutil
 import datetime
 import subprocess
 import pandas as pd
-from openpyxl import Workbook
-from openpyxl.utils import get_column_letter
 
 # asking for the monitor data
 group_name = input('\nEscriba el código del grupo al que le desea realizar el seguimiento: ')
@@ -19,17 +17,14 @@ workshops = input('Ingrese el taller: ').upper()
 print('\nLa fecha debe ir en el formato \'nombre día mes\', por ejemplo \'domingo 5 de marzo\'.')
 end_date = input('Ingrese la fecha final de entrega del taller: ')
 
-# creating the new folder
 folder_path = os.getcwd()
 file_list = os.listdir(folder_path)
 group_name_folder = 'Resultados ' + group_name
 os.makedirs(group_name_folder, exist_ok = True)
 
-# creating the Feedback file
 feedback_txt_file = f'Feedback Grupo {group_name} - taller {workshops}.txt'
 results_path = group_name_folder + '/'
 
-# creating the dataframe
 dataframe = pd.read_csv(os.path.join(folder_path, (group_name + '.csv')), sep = ';')
 
 # writing the Feedback file
@@ -62,6 +57,7 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
         if len(unsent_activities) > 0: students[name + ' ' + lastname] = (email, unsent_activities)
         else: dataframe = dataframe.drop(index)
 
+    # txt file messages
     for student, data in students.items():
         print('Correo:', data[0])
         print(f'Hola {student.split()[0].capitalize()}, ¿Cómo estás?\nEstaba revisando Moodle y vi que:\n')
