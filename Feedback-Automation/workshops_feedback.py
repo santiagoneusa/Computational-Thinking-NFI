@@ -8,6 +8,8 @@ import shutil
 import datetime
 import subprocess
 import pandas as pd
+from openpyxl import Workbook
+from openpyxl.utils import get_column_letter
 
 # asking for the monitor data
 group_name = input('\nEscriba el código del grupo al que le desea realizar el seguimiento: ')
@@ -42,7 +44,6 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
         if column == 'Nombre' or column == 'Apellido(s)' or column == 'Dirección de correo': continue
         if column.find(workshops) == -1: dataframe = dataframe.drop(column, axis = 1)
         dataframe = dataframe.rename(columns = {column: column[36:]})
-
     students = {}
 
     row_counter = 3
@@ -61,7 +62,6 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
         if len(unsent_activities) > 0: students[name + ' ' + lastname] = (email, unsent_activities)
         else: dataframe = dataframe.drop(index)
 
-    # output messages
     for student, data in students.items():
         print('Correo:', data[0])
         print(f'Hola {student.split()[0].capitalize()}, ¿Cómo estás?\nEstaba revisando Moodle y vi que:\n')
@@ -74,12 +74,13 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
         print(f'\nAsí que quería recordarte que la fecha de entrega es el {end_date}. Además, decirte que si tienes dudas, podemos reunirnos, de forma presencial o virtual.')
         print(f'Cordial saludo, {monitor_name}.\n\n')
         
-    
     dataframe.insert(loc = 3, column = 'Grupo', value = group_name)
     now = str(datetime.datetime.now())
     dataframe.insert(loc = 4, column = 'Fec Reporte', value = now[:10])
-    dataframe.insert(dataframe.shape[1], 'Fecha de envío de mensaje', '')
-    dataframe.insert(dataframe.shape[1], 'Respuesta del estudiante', '')
+    dataframe.insert(dataframe.shape[1], 'Fecha de contacto', '')
+    dataframe.insert(dataframe.shape[1], 'Comentario', '')
+    dataframe.insert(dataframe.shape[1], 'Hubo Asesoría', '')
+
 
     feedback_xlsx_file = feedback_txt_file[:-4] + '.xlsx'
     dataframe.to_excel((results_path + feedback_xlsx_file), index = False)
@@ -95,5 +96,4 @@ print(f'El documento para llevar el seguimiento de los estudiantes es \'{feedbac
 if os.name == 'nt':
     os.startfile(group_name_folder)
 else:
-    subprocess.run(['xdg-open', group_name_folder]) 
-
+    subprocess.run(['xdg-open', group_name_folder])
