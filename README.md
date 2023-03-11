@@ -28,7 +28,7 @@ You can see the files [here](https://github.com/sneusar/Computational-Thinking-N
 
 Since the process of keeping track of students through the Moodle platform was a bit tedious, I decided to create this script to help those who belong to the group of monitors of the 'Computational Thinking' course offered by EAFIT University.
 
-This program evaluates in a '.csv' file the grades of the students in a given group. Those who have not submitted the activity or have a grade lower than 100 in any of the workshops or a grade lower than 4.6 in any of the quices, will be taken into account in a data dictionary that will be used to write files with the given information.
+This program evaluates in a '.csv' file the grades of the students in a given group. Those who have not submitted the activity or have a grade lower than 100 in any of the workshops or a grade lower than 4 in any of the quices, will be taken into account in a data dictionary that will be used to write files with the given information.
 
 As a result, the program outputs a '.txt' file containing a set of messages, whose content is a greeting, the title of the unperformed activities and their grade, and a warning about the delivery date of the workshop or offer accompaniment in the case of a quiz with low performance. In addition, we find an '.xlsx' file that serves to keep track of the dates of sending the messages that the '.txt' file returns and where the monitor will put the answers that the student gives to the messages sent to him/her.
 
