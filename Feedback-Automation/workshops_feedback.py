@@ -102,5 +102,3 @@ if os.name == 'nt':
     os.startfile(group_name_folder)
 else:
     subprocess.run(['xdg-open', group_name_folder])
-
->>>>>>> 1dbf8980583320afb530307525b2d3dc2f0859ca
