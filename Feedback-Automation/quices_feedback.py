@@ -57,7 +57,7 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
         unsent_activities = []
 
         for grade in row[3:]:
-            if grade == '-' or float(grade) < 4.6:
+            if grade == '-' or float(grade) < 4:
                 unsent_activities.append((dataframe.columns[row_counter], grade))
             row_counter += 1
         row_counter = 3
