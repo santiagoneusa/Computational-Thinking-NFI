@@ -17,7 +17,7 @@ end_date = input('Ingrese la fecha límite de entrega del taller: ')
 
 workshops_names = ''
 for workshop in workshops: workshops_names += f' Taller {workshop[1]}'
-
+print(workshops_names)
 folder_path = os.getcwd()
 file_list = os.listdir(folder_path)
 group_name_folder = f'Grupo {group_name} -{workshops_names}'
@@ -41,7 +41,7 @@ with open(feedback_txt_file, 'w', encoding='utf-8') as f:
             activity_name = column.replace('Laboratorio virtual de programación:', '')
             activity_name = activity_name.replace(' - Ejercicio - ', '')
             activity_name = activity_name.replace(' (Real)', '')
-            activity_name = f'Ejercicio {activity_name[2:4]}: {activity_name[4:]}'
+            activity_name = f'Taller {activity_name[1:2]} Ejercicio {activity_name[2:4]}: {activity_name[4:]}'
             dataframe = dataframe.rename(columns = {column: activity_name})
         else: del dataframe[column]
     
