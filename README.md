@@ -36,8 +36,13 @@ As a result, the program outputs a '.txt' file containing a set of messages, who
 ## Getting Started
 
 ### Prerequisites
-The program is independent of the OS under which it is running, however, it is necessary to have Python3 and Pandas installed.
+The program is independent of the OS under which it is running, however, it is necessary to have Python, Openpyxl and Pandas installed.
 
+To install openpyxl you can use the following command.
+  ```sh
+  pip install openpyxl
+  ```
+  
 To install Pandas you can use the following command.
   ```sh
   pip install pandas
