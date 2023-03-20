@@ -1,3 +1,7 @@
+# Program for automation of monitoring and accompaniment of workshops.
+# Made by Santiago Neusa.
+# More information in https://github.com/sneusar/Computational-Thinking-NFI
+
 import os
 import sys
 import shutil
